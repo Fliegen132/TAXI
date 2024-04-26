@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57760eb4b314b0744aa5f4d9a55e410d, type: 3}
+  m_Name: FirstCar
+  m_EditorClassIdentifier: 
+  Id: 
+  MaxSpeed: 50
+  Acceleration: 20
+  Prefab: {fileID: 8421723716826938065, guid: 10632e226ada66647aece395ef22da9c, type: 3}
