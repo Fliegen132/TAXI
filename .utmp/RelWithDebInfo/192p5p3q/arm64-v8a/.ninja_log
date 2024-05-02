@@ -1,0 +1,21 @@
+# ninja log v5
+941	1411	7363402848610002	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	afdcf7bddf8a88c1
+3	3453	7363402869988050	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	6cdc0960ec55ebb9
+929	3150	7363402865767061	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	fa667ba0ede2353f
+1411	2740	7363402861996419	C:/GitProjects/TAXI/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/192p5p3q/obj/arm64-v8a/libswappywrapper.so	59df1e751c5c3e48
+905	3237	7363402867791041	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ac8f9325c4696d88
+934	3128	7363402866427173	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c498fa24a84baf86
+923	3163	7363402866997271	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	1a55233ad1fc3c48
+918	3165	7363402866947260	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	93cf3356dab609fb
+912	3399	7363402869460777	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	666df628220bddcb
+3453	4025	7363402874930417	C:/GitProjects/TAXI/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/192p5p3q/obj/arm64-v8a/libgame.so	ab8d239c84efe0c2
+956	1171	7363417429811413	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	afdcf7bddf8a88c1
+1171	1894	7363417435753020	C:/GitProjects/TAXI/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/192p5p3q/obj/arm64-v8a/libswappywrapper.so	59df1e751c5c3e48
+931	2076	7363417438799977	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	fa667ba0ede2353f
+919	2106	7363417439130036	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	93cf3356dab609fb
+938	2107	7363417438990004	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c498fa24a84baf86
+945	2196	7363417440136238	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	1a55233ad1fc3c48
+913	2211	7363417440416283	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ac8f9325c4696d88
+925	2359	7363417441896751	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	666df628220bddcb
+6	2401	7363417442316892	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	6cdc0960ec55ebb9
+2401	3016	7363417447553328	C:/GitProjects/TAXI/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/192p5p3q/obj/arm64-v8a/libgame.so	ab8d239c84efe0c2

@@ -5,9 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("TurnsValue")]
-    [SerializeField] private float turnSpeed = 0.1f;
-    [SerializeField] private float rotateSpeed = 2;
-    private Rigidbody _rigidbody;
+    [SerializeField] private float turnSpeed;
+    [SerializeField] private float rotateSpeed;
     private ScriptableCars _car;
     private bool _isTurning;
     private float _turnStartTime;
@@ -17,27 +16,33 @@ public class PlayerController : MonoBehaviour
     private float y;
     private bool _back = false;
     private float _rotateAngle;
-
+    private bool _crashed;
     //for speed
     private float _currentSpeed;
     public float CurrentSpeed => _currentSpeed;
+    public float RealSpeed; 
     public float MaxSpeed;
 
-    public Action<bool> Direct;
+    public Action<bool> DirectBtns;
+    public Action BrakeBtn;
+
     private void Awake()
     {
         y = transform.rotation.eulerAngles.y;
-        _currentSpeed = 30;
+        _currentSpeed = 10;
+        _crashed = false;
     }
 
     private void OnEnable()
     {
-        Direct += DirectionTurn;
+        DirectBtns += DirectionTurn;
+        BrakeBtn += Brake;
     }
 
     private void OnDisable()
     {
-        Direct -= DirectionTurn;
+        DirectBtns -= DirectionTurn;
+        BrakeBtn -= Brake;
     }
 
     public void SetCar(ScriptableCars car)
@@ -46,14 +51,20 @@ public class PlayerController : MonoBehaviour
         MaxSpeed = _car.MaxSpeed;
     }
     public ScriptableCars GetCar() => _car;
-   
 
     private void FixedUpdate()
     {
-        if (_currentSpeed < MaxSpeed)
-            _currentSpeed += Time.fixedDeltaTime * _car.Acceleration;
-        if (_currentSpeed > MaxSpeed)
-            _currentSpeed -= Time.fixedDeltaTime * _car.Acceleration;
+        if (LossGame.GetEnd())
+            return;
+        MathPlayer();
+        if (!_crashed)
+        {
+            if (_currentSpeed < MaxSpeed && !PlayerInput.GetBrake())
+                _currentSpeed += Time.fixedDeltaTime * _car.Acceleration;
+            if (_currentSpeed > MaxSpeed)
+                _currentSpeed -= Time.fixedDeltaTime * _car.Acceleration;
+        }
+        
         if (_isTurning)
         {
             float time = Time.time - _turnStartTime;
@@ -72,7 +83,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position,
                 new Vector3(_newPosition, transform.position.y, 0),
-                time * turnSpeed * 3);
+                time * turnSpeed * 2);
         }
 
         if (_right && transform.position.x < _newPosition + 0.85f)
@@ -81,7 +92,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = Vector3.Lerp(transform.position,
                 new Vector3(_newPosition + 1f, transform.position.y, 0),
-                time * turnSpeed);
+                time * turnSpeed * 2);
             }
         }
 
@@ -91,7 +102,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = Vector3.Lerp(transform.position,
                 new Vector3(_newPosition - 1f, transform.position.y, 0),
-                time * turnSpeed);
+                time * turnSpeed * 2);
             }
         }
         else
@@ -151,28 +162,31 @@ public class PlayerController : MonoBehaviour
         _turnStartTime = Time.time;
     }
 
+    private void MathPlayer()
+    {
+        turnSpeed = PlayerMath.MathTrunSpeed(CurrentSpeed);
+        rotateSpeed = PlayerMath.MathRotateSpeed(CurrentSpeed);
+        RealSpeed = PlayerMath.MathSpeed(CurrentSpeed);
+    }
+
+    private void Brake()
+    {
+        if(_currentSpeed >= 25)
+            _currentSpeed -= Time.fixedDeltaTime * 30;
+    }
+    //удалить в будущем
     public void AddMaxSpeed(float speed)
     {
-        if (MaxSpeed >= 220)
+        if (MaxSpeed >= 100)
             return;
-        if (MaxSpeed >= 40)
-        {
-            turnSpeed += 0.05f;
-            rotateSpeed += 1f;
-        }
-        
         MaxSpeed += speed;
     }
 
+    //удалить в будущем
     public void TakeMaxSpeed(float speed)
     {
         if (MaxSpeed <= 20)
             return;
-        if (MaxSpeed >= 50)
-        { 
-            turnSpeed -= 0.05f;
-            rotateSpeed -= 1f;
-        }
         MaxSpeed -= speed;
     }
 
@@ -180,11 +194,43 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Block"))
         {
-            _isTurning = false;
-            _right = !_right;
-            _oldPositon = (float)Math.Round(transform.position.x, 1);
-            _back = true;
-            MathTurn();
+            HitWall();
+        }
+
+        if (collision.gameObject.CompareTag("Bot"))
+        {
+            HitBot();
+            _crashed = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bot"))
+        {
+            _crashed = false;
+            HitBot();
+        }
+    }
+
+    private void HitWall()
+    {
+        _isTurning = false;
+        _right = !_right;
+        _oldPositon = (float)Math.Round(transform.position.x, 1);
+        _back = true;
+        MathTurn();
+    }
+
+    private void HitBot()
+    {
+        if (CurrentSpeed >= 70)
+        {
+            LossGame.Loss?.Invoke();
+        }
+        else
+        {
+            _currentSpeed -= 10;
         }
     }
 }

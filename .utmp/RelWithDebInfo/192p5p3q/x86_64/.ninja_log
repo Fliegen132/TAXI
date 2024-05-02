@@ -1,0 +1,11 @@
+# ninja log v5
+273	488	7363417645678376	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4d8c1c26e56187d5
+243	1048	7363417651424574	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	1f3153f5e9295399
+258	1313	7363417652904997	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	3310a34ba77e0de9
+224	1324	7363417653370161	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	d13c6ab708b71759
+490	1427	7363417654615466	C:/GitProjects/TAXI/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/192p5p3q/obj/x86_64/libswappywrapper.so	e48c7aa16644eada
+236	1500	7363417654095372	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	36512ef668d2d56
+230	1514	7363417654910594	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	cb5791596db52155
+0	1530	7363417656120820	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b5eac409044d763e
+250	1590	7363417656914001	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	52bf418f28344a
+1590	2232	7363417662693175	C:/GitProjects/TAXI/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/192p5p3q/obj/x86_64/libgame.so	ea39845fa63fd9ee

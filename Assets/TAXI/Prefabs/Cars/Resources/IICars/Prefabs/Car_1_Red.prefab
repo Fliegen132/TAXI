@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 485172}
   - component: {fileID: 3312322}
   - component: {fileID: 2319746}
-  - component: {fileID: 2553037879608877522}
-  - component: {fileID: 8286487940192529855}
   - component: {fileID: 9130565776872650544}
+  - component: {fileID: 2407082530525484834}
   m_Layer: 0
   m_Name: Car_1_Red
-  m_TagString: Untagged
+  m_TagString: Bot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,39 +93,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2553037879608877522
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116448}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.041918803, y: 0.016332494, z: 0.021649476}
-  m_Center: {x: 0.00043716907, y: -0.00050885585, z: -0.0000000023841857}
---- !u!114 &8286487940192529855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d47b277dfdf1d934eb3f72201be0f4b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &9130565776872650544
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,8 +118,29 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
+  m_Constraints: 118
+  m_CollisionDetection: 1
+--- !u!65 &2407082530525484834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116448}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.041918803, y: 0.016344182, z: 0.021649476}
+  m_Center: {x: 0.00043716907, y: -0.0005147031, z: -0.0000000023841857}
 --- !u!1 &139306
 GameObject:
   m_ObjectHideFlags: 0

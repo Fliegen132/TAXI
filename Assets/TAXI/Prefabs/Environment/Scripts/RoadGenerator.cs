@@ -17,6 +17,8 @@ public class RoadGenerator
 
     private void Create()
     {
+        if (LossGame.GetEnd())
+            return;
         for (int i = 0; i < 5; i++)
         {
             var loadGo = Resources.Load<GameObject>("Road");
@@ -28,11 +30,15 @@ public class RoadGenerator
 
     public void SubtractDistance()
     {
+        if (LossGame.GetEnd())
+            return;
         _distance -= 80;
     }
 
     public void ReuseRoad()
     {
+        if (LossGame.GetEnd())
+            return;
         for (int i = 0;i < roads.Count; i++) 
         {
             if (!roads[i].activeInHierarchy)

@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 3206430756840409355}
   m_Layer: 0
   m_Name: Car_4_Red
-  m_TagString: Untagged
+  m_TagString: Bot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -272,7 +272,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140570}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4e538d6cd584b074787ff7a3467e153c, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -311,8 +311,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
+  m_Constraints: 118
+  m_CollisionDetection: 1
 --- !u!1 &168118
 GameObject:
   m_ObjectHideFlags: 0

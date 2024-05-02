@@ -1,0 +1,8 @@
+C:/GitProjects/TAXI/.utmp/RelWithDebInfo/192p5p3q/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/GitProjects/TAXI/.utmp/RelWithDebInfo/192p5p3q/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/GitProjects/TAXI/.utmp/RelWithDebInfo/192p5p3q/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/GitProjects/TAXI/.utmp/RelWithDebInfo/192p5p3q/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/GitProjects/TAXI/.utmp/RelWithDebInfo/192p5p3q/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+C:/GitProjects/TAXI/.utmp/RelWithDebInfo/192p5p3q/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/GitProjects/TAXI/.utmp/RelWithDebInfo/192p5p3q/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/GitProjects/TAXI/.utmp/RelWithDebInfo/192p5p3q/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

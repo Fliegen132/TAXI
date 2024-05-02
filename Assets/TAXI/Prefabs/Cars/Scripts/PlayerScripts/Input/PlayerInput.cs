@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
+using TMPro;
 public sealed class PlayerInput : MonoBehaviour
 {
     private static readonly float m_turnForce = 7.4f;
     private static PlayerController m_Controller;
-
+    private static bool _brake;
     [SerializeField] private Button leftBtn;
     [SerializeField] private Button rightBtn;
+    [SerializeField] private TextMeshProUGUI speedText;
+
     private void Start()
     {
         m_Controller = StorageCars.Player.GetComponent<PlayerController>();
@@ -26,11 +29,23 @@ public sealed class PlayerInput : MonoBehaviour
         return currentTurn;
     }
 
-    public void Direct(bool right)
-    { 
-        m_Controller?.Direct(right);
+    private void FixedUpdate()
+    {
+        speedText.text = $"{(int)m_Controller.CurrentSpeed} ÊÌ/×";
+        if (_brake)
+            m_Controller?.BrakeBtn();
     }
 
-    public bool Brake() => true;
+    private void Direct(bool right)
+    { 
+        m_Controller?.DirectBtns(right);
+    }
+
+    public static bool GetBrake() => _brake;
+
+    public void DoBrake(bool enabled)
+    {
+        _brake = enabled;
+    }
     
 }

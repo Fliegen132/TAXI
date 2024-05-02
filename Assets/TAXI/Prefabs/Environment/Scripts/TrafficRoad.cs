@@ -22,12 +22,14 @@ public class TrafficRoad : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (LossGame.GetEnd())
+            return;
         for (int i = 0; i < _roads.Count; i++)
         {
             if (_roads[i].activeInHierarchy)
             {
                 _roads[i].transform.position = new Vector3(_roads[i].transform.position.x,
-                    _roads[i].transform.position.y, _roads[i].transform.position.z - _playerController.CurrentSpeed * Time.fixedDeltaTime);
+                    _roads[i].transform.position.y, _roads[i].transform.position.z - _playerController.RealSpeed * Time.fixedDeltaTime);
                 if (_roads[i].transform.localPosition.z <= _maxSpacing)
                 {
                     _roads[i].SetActive(false);
@@ -53,6 +55,5 @@ public class TrafficRoad : MonoBehaviour
     private void SetText()
     { 
         _text.text = _playerController.MaxSpeed.ToString();
-
     }
 }
