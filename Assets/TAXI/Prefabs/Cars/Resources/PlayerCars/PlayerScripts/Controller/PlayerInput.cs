@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using TMPro;
-public sealed class PlayerInput : MonoBehaviour
+public sealed class PlayerInput : MonoBehaviour, IService
 {
     private static readonly float m_turnForce = 7.4f;
     private static PlayerController m_Controller;

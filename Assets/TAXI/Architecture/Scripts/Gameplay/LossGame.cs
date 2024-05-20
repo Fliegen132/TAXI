@@ -11,6 +11,10 @@ public class LossGame : MonoBehaviour
     {
         lossWindow.SetActive(false);
         _end = false;
+    }
+
+    private void OnEnable()
+    {
         Loss += EndGame;
     }
 
@@ -23,14 +27,18 @@ public class LossGame : MonoBehaviour
     {
         if (!_end)
         { 
-            lossWindow.SetActive(true);
-
-            foreach (GameObject go in _otherWindow)
-            {
-                go.SetActive(false);
-            }
-
             _end = true;
+            Invoke(nameof(ViewLoss), 2f);
+        }
+    }
+
+    private void ViewLoss()
+    {
+        lossWindow.SetActive(true);
+
+        foreach (GameObject go in _otherWindow)
+        {
+            go.SetActive(false);
         }
     }
 

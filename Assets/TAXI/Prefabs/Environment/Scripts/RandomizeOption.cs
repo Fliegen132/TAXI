@@ -15,7 +15,4 @@ public class RandomizeOption : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(false);
         }
     }
-
-    
-
 }

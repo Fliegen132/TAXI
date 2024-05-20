@@ -7,6 +7,7 @@ public class PlayerCreator : Creator
         var scriptableCars = Resources.Load<ScriptableCars>(scriptaplePath);
         PlayerController car = Object.Instantiate(scriptableCars.Prefab).AddComponent<PlayerController>();
         car.SetCar(scriptableCars);
+        car.gameObject.AddComponent<PlayerFullness>();
         StorageCars.Player = car.gameObject;
     }
 }

@@ -8,7 +8,8 @@ public class Restart : MonoBehaviour
     {
         StorageCars.Player = null;
         StorageCars.IICars = new List<GameObject>();
-
+        RoadStorage.BusStop = null;
+        ServiceLocator.current.UnregisterAll();
         SceneManager.LoadScene(0);
     }
 }
